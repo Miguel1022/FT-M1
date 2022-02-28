@@ -1,67 +1,22 @@
 function BinarioADecimal(num) {
   // tu codigo aca
-  var numeros = []
-  for (let b = 0; b < num.length; b++) {
-      if (num[b]=='1') {
-          numeros.push(1)
-      }else{
-          numeros.push(0)
-      }
-  }
-  let test = 0
-    for (let i = 0; i < num.length; i++) {
-      let digito = numeros[i]
-      test = test*2+digito
+  str = String(num);
+  var x = 0
+  for(i=0; i<str.length; i++){
+    x += parseInt(str[i]) * 2 **((str.length-1)-i)
     }
-    return test
+  return x;
 }
 
 function DecimalABinario(num) {
-  var numero = num
-  var binario = []
-for (let i = 0; i < num; i++) {
-if (num>4) {
-  if (numero<=0) {
-      return binario.join('')
+  var str = '';
+  while (num > 0) {
+    str += num%2;
+    num = Math.floor(num/2);
   }
-  else{
-      if (numero%2==0) {
-          binario.push('0')
-          numero = numero/2
-      } else{
-          binario.push('1')
-          numero = numero/2-1
-          numero = Math.round(numero)
-      }
-  }
-}else{
-  let binario = []
-  switch(num) {
-      
-      case 1:
-          binario.push('1')
-        break;
-      case 2:
-          binario.push('10')
-        break;
-      case 3:
-          binario.push('11')
-        break;
-      case 4:
-          binario.push('100')
-        break;      
-      default:
-          binario.push('0')
-        // code block
-        break;
-        
-    }
-    return binario.join('')
+  var x = str.split('').reverse().join('');
+  return x; 
 }
-
-}
-}
-
 
 
 module.exports = {
