@@ -3,7 +3,7 @@ function BinarioADecimal(num) {
   str = String(num);
   var x = 0
   for(i=0; i<str.length; i++){
-    x += parseInt(str[i]) * 2 **((str.length-1)-i)
+    x += str[i] * 2 **((str.length-1)-i)
     }
   return x;
 }
@@ -11,11 +11,10 @@ function BinarioADecimal(num) {
 function DecimalABinario(num) {
   var str = '';
   while (num > 0) {
-    str += num%2;
+    str = (num%2) + str;
     num = Math.floor(num/2);
   }
-  var x = str.split('').reverse().join('');
-  return x; 
+  return str; 
 }
 
 
