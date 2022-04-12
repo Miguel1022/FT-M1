@@ -1,9 +1,9 @@
 function BinarioADecimal(num) {
   // tu codigo aca
-  str = String(num);
+  var a = String(num);
   var x = 0
-  for(i=0; i<str.length; i++){
-    x += parseInt(str[i]) * 2 **((str.length-1)-i)
+  for(i=0; i<a.length; i++){
+    x += Number(str[i]) * 2 **((a.length-1)-i)
     }
   return x;
 }
